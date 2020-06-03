@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <title>Registration form</title>
+        <link rel="stylesheet" href="register_style.css">;
+        <script type="text/javascript">
+              var Password = document.getElementById("pwd");
+              var ConfirmPassword = document.getElementById("confirmpwd");
+             function validation_name()
+             {
+               var Name = document.getElementById("name");
+               var char = /^[a-zA-Z]+$/;
+            
+                if(Name.value.match(char))
+                {  
+                  document.getElementById("message_name").innerHTML="Accepted";
+                  return true;
+                }
+                else if(Name.value.trim() == "")
+                {
+                  document.getElementById("message_name").innerHTML="*Name field should not left blank";
+                  return false;
+                }
+                else
+                {
+                  document.getElementById("message_name").innerHTML="*Enter valid Name, only accepts alphabets!";
+                  return false;
+                }
+              }
+               function validation_mail()
+               {
+                  var Email = document.getElementById("email");
+                  var mail = /^([a-z 0-9\.-]{3,15})@([a-z 0-9\.-]+).([a-z]{2,4})$/;
+
+                  if(Email.value.match(mail))
+                  {
+                    document.getElementById("message_mail").innerHTML="Accepted";
+                    return true;
+                  }
+                  else if(Email.value.trim() == "")
+                  {
+                    document.getElementById("message_mail").innerHTML="*Email field should not left blank";
+                    return false;
+                  }
+                  else
+                  {
+                    document.getElementById("message_mail").innerHTML="*Invalid Email id, Kindly check";
+                    return false;
+                  }
+                }
+                 function validation_mn()
+                 {
+                    var Number = document.getElementById("number");
+                    var num = /^[7-9][0-9]{9}$/;
+
+                    if(Number.value.match(num))
+                    {
+                      document.getElementById("message_mn").innerHTML="Accepted";
+                      return true;
+                    }
+                    else if(Number.value.trim() == "")
+                    {
+                      document.getElementById("message_mn").innerHTML="*Mobile Number field should not left blank";
+                      return false; 
+                    }
+                    else
+                    {
+                      document.getElementById("message_mn").innerHTML="*Mobile Number must have 10 digit";
+                      return false; 
+                    }
+                  }
+                    function validation_psd()
+                   {
+                      var Password = document.getElementById("pwd");
+                      var psd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+
+                      if(Password.value.match(psd))
+                      {
+                        document.getElementById("message_psd").innerHTML="Accepted";
+                        return true;
+                      }
+                      else if(Password.value.trim() == "")
+                      {
+                        document.getElementById("message_psd").innerHTML="*Password Field should not left blank";
+                        return false;
+                      }
+                      else
+                      {
+                        document.getElementById("message_psd").innerHTML="*Invalid password, max length(8-15), atleast 1 Upper case, 1 lower case, 1 digit, 1 special character";
+                        return false;
+                      }
+                    }
+                     function validation_cfmpsd()
+                     {
+                        var Password = document.getElementById("pwd");
+                        var ConfirmPassword = document.getElementById("confirmpwd");
+                        var cfmpsd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+
+                        if(ConfirmPassword.value.match(cfmpsd))
+                        {
+                          document.getElementById("message_cfmpsd").innerHTML="Partially Accepted";
+                          return true;
+                        }
+                        /*else if(Password.value() == ConfirmPassword.value())
+                        {
+                          document.getElementById("message_cfmpsd").innerHTML="Accepted";
+                          return true;
+                        }*/
+                        else if(ConfirmPassword.value.trim() == "")
+                        {
+                          document.getElementById("message_cfmpsd").innerHTML="*Confirm Password Field should not left blank";
+                          return false;
+                        }
+                        else
+                        {
+                          document.getElementById("message_cfmpsd").innerHTML="*Incorrect Confirm Password, check again!";
+                          return false;
+                        }
+                      }
+                       function validation_ct()
+                       {
+                          var City = document.getElementById("city");
+                          var cty = /^[A-Za-z]+$/;
+
+                          if(City.value.match(cty))
+                          {
+                            document.getElementById("message_ct").innerHTML="Accepted";
+                            return true;
+                          }
+                          else if(City.value.trim() == "")
+                          {
+                            document.getElementById("message_ct").innerHTML="*City field should not left blank";
+                            return false;
+                          }  
+                         else
+                         {
+                           document.getElementById("message_ct").innerHTML="*Enter valid city Name";
+                           return false;
+                         }
+                        }
+                         function validation_zc()
+                         {
+                            var Zip = document.getElementById("zip");
+                            var zcode = /^[0-9]{6}$/;
+
+                            if(Zip.value.match(zcode))
+                           {
+                              document.getElementById("message_zc").innerHTML="Accepted";
+                              return true;
+                           }
+                           else if(Zip.value.trim() == "")
+                           {
+                              document.getElementById("message_zc").innerHTML="*Zip code field should not left blank";
+                              return false;
+                           }
+                           else
+                           {
+                              document.getElementById("message_zc").innerHTML="*Enter valid Zip Code, Must have 6 digit!";
+                              return false;
+                           }
+                          }    
+        </script>
+    </head>
+    <body> 
+      <div class ="Registration-form">
+        <div class="form">
+            <form onsubmit =" return validation_name()  &&  validation_mail()  &&  validation_mn()  &&  validation_psd()  &&  validation_cfmpsd()  &&  validation_ct()  &&  validation_zc() "action ="login.html">
+                <h1> Registration Form</h1>
+                 <input id="name" placeholder="Name"type="text"><span id="message_name" style="color:rgb(255, 230, 0)"></span><p></p>
+                  <input id="email" placeholder="Email"type="text"><span id="message_mail" style="color: rgb(255, 230, 0)"></span><p></p>
+                  <input id="number" placeholder="Mobile Number"type ="text"><span id="message_mn" style="color: rgb(255, 230, 0)"></span><p></p>
+                  <input id="pwd" placeholder="Password"type="password"><span id="message_psd" style="color: rgb(255, 230, 0)"></span><p></p>
+                  <input id="confirmpwd" placeholder="Confirm password"type="password"><span id="message_cfmpsd" style="color: rgb(255, 230, 0)"></span><p></p>
+                  <input id="city" placeholder="City"type="text"><span id="message_ct" style="color: rgb(255, 230, 0)"></span><p></p>
+                  <input id="zip" placeholder="Zipcode"type="text"><span id="message_zc" style="color: rgb(255, 230, 0)"></span><p></p>
+                 <button type="submit">Create</button>
+                <p class ="message" style="color: rgb(255, 19, 2);">Already Registered? <a href ="login.html" style="color: rgb(17, 3, 212);"> Log In</a>
+                <link rel = "login" href="login.html"></p>
+            </form>
+        </div>
+    </div>
+    </body>
+</html>
