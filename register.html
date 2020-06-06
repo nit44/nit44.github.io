@@ -8,7 +8,7 @@
              function validation_name()
              {
                var Name = document.getElementById("name");
-               var char = /^[a-zA-Z]+$/;
+               var char = /^[a-z A-Z]+$/;
             
                 if(Name.value.match(char))
                 {  
@@ -97,7 +97,7 @@
 
                         if(ConfirmPassword.value.match(cfmpsd))
                         {
-                          document.getElementById("message_cfmpsd").innerHTML="Partially Accepted";
+                          document.getElementById("message_cfmpsd").innerHTML="Accepted";
                           return true;
                         }
                         /*else if(Password.value() == ConfirmPassword.value())
@@ -119,7 +119,7 @@
                        function validation_ct()
                        {
                           var City = document.getElementById("city");
-                          var cty = /^[A-Za-z]+$/;
+                          var cty = /^[A-Z a-z]+$/;
 
                           if(City.value.match(cty))
                           {
@@ -166,14 +166,14 @@
             <form onsubmit =" return validation_name()  &&  validation_mail()  &&  validation_mn()  &&  validation_psd()  &&  validation_cfmpsd()  &&  validation_ct()  &&  validation_zc() "action ="login.html">
                 <h1> Registration Form</h1>
                  <input id="name" placeholder="Name"type="text"><span id="message_name" style="color:rgba(255, 0, 0, 0.753)"></span><p></p>
-                  <input id="email" placeholder="Email"type="text"><span id="message_mail" style="color: rgb(255, 0, 0, 0.753)"></span><p></p>
-                  <input id="number" placeholder="Mobile Number"type ="text"><span id="message_mn" style="color: rgb(255, 0, 0, 0.753)"></span><p></p>
-                  <input id="pwd" placeholder="Password"type="password"><span id="message_psd" style="color: rgb(255, 0, 0, 0.753)"></span><p></p>
-                  <input id="confirmpwd" placeholder="Confirm password"type="password"><span id="message_cfmpsd" style="color: rgb(255, 0, 0, 0.753)"></span><p></p>
-                  <input id="city" placeholder="City"type="text"><span id="message_ct" style="color: rgb(255, 0, 0, 0.753)"></span><p></p>
-                  <input id="zip" placeholder="Zipcode"type="text"><span id="message_zc" style="color: rgb(255, 0, 0, 0.753)"></span><p></p>
+                  <input id="email" placeholder="Email"type="text"><span id="message_mail" style="color: rgba(255, 0, 0, 0.753)"></span><p></p>
+                  <input id="number" placeholder="Mobile Number"type ="text"><span id="message_mn" style="color: rgba(255, 0, 0, 0.753)"></span><p></p>
+                  <input id="pwd" placeholder="Password"type="password"><span id="message_psd" style="color: rgba(255, 0, 0, 0.753)"></span><p></p>
+                  <input id="confirmpwd" placeholder="Confirm password"type="password"><span id="message_cfmpsd" style="color: rgba(255, 0, 0, 0.753)"></span><p></p>
+                  <input id="city" placeholder="City"type="text"><span id="message_ct" style="color: rgba(255, 0, 0, 0.753)"></span><p></p>
+                  <input id="zip" placeholder="Zipcode"type="text"><span id="message_zc" style="color: rgba(255, 0, 0, 0.753)"></span><p></p>
                  <button type="submit">Create</button>
-                <p class ="message" style="color: rgb(248, 51, 51);">Already Registered? <a href ="login.html" style="color: rgb(17, 3, 212);"> Log In</a>
+                <p class ="message" style="color: rgba(248, 51, 51);">Already Registered? <a href ="login.html" style="color: rgb(17, 3, 212);"> Log In</a>
                 <link rel = "login" href="login.html"></p>
             </form>
         </div>
