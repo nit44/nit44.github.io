@@ -115,16 +115,11 @@
                         var ConfirmPassword = document.getElementById("confirmpwd");
                         var cfmpsd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
 
-                        if(ConfirmPassword.value.match(cfmpsd))
+                        if(ConfirmPassword.value.match(cfmpsd) || Password.value() == ConfirmPassword.value())
                         {
                           document.getElementById("message_cfmpsd").innerHTML="Accepted";
                           return true;
                         }
-                        /*else if(Password.value() == ConfirmPassword.value())
-                        {
-                          document.getElementById("message_cfmpsd").innerHTML="Accepted";
-                          return true;
-                        }*/
                         else if(ConfirmPassword.value.trim() == "")
                         {
                           document.getElementById("message_cfmpsd").innerHTML="*Confirm Password Field should not left blank";
