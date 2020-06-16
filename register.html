@@ -49,7 +49,7 @@
                function validation_mail()
                {
                   var Email = document.getElementById("email");
-                  var mail = /^([a-z 0-9\.-]{3,15})@([a-z 0-9\.-]+).([a-z]{2,4})$/;
+                  var mail = /^([a-z])([a-z0-9\._-]{3,20})@([a-z]{4,10})(\.)([a-z]{2,3})$/;
 
                   if(Email.value.match(mail))
                   {
@@ -117,7 +117,7 @@
 
                          if(Password.value != ConfirmPassword.value)
                          {
-                           document.getElementById("message_cfmpsd").innerHTML="*Confirm Password after password should match";
+                           document.getElementById("message_cfmpsd").innerHTML="*Confirm Password not same as password you entered";
                             return false;  
                          }
                         if(ConfirmPassword.value.match(cfmpsd) )
