@@ -6,7 +6,7 @@
     function validate_psd()
     {
        var password = document.getElementById("pwd");
-        var psd = /^(\d)$/;
+        var psd = /^\d$/;
         if(password.value.match(psd))
         {
             document.getElementById("message_psd").innerHTML="Accepted";
