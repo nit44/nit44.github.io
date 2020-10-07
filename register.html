@@ -91,7 +91,7 @@
                     function validation_psd()
                    {
                       var Password = document.getElementById("pwd");
-                      var psd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+                      var psd = /^(?=.[^a-zA-Z0-9])(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
 
                       if(Password.value.match(psd))
                       {
