@@ -1,1 +1,43 @@
+<html>
+    <head> 
+        <title> Password Validation form</title>
+        <link rel="stylesheet" href="login_style.css">
+        <script type="text/javascript"> 
+    function validate_psd()
+    {
+       var password = document.getElementById("pwd");
+        var psd = /^(?=.*\d)$/;
+        if(password.value.match(psd))
+        {
+            document.getElementById("message_psd").innerHTML="Accepted";
+            return true;
+        }
+        else if(password.value.trim() == "")
+        {
+            document.getElementById("message_psd").innerHTML="*Password field should not left blank";
+            return false;
+        }
+        else
+        {
+            document.getElementById("message_psd").innerHTML="*Invalid password, max length(8-15), atleast 1 Upper case, 1 lower case, 1 digit, 1 special character";
+            return false;
+        }
+    }
+    </script>
+    </head>
+    <body>
+        <div class="Password validation-form">
+        <div class = "Form">
+            <form onsubmit=" return validate_psd() "action ="welcome.html">
+                <h1 style="color: rgb(28, 209, 164);">Password Validation Form</h1>
+                <input id="pwd" placeholder="Password" type="password"/><span id="message_psd" style="color: rgb(243, 247, 53);"></span><p></p>
+                <button type="submit">Submit</button>
+                <p class="message" style="color: rgb(223, 129, 67);">  New member? <a href ="register.html" style="color: rgb(212, 49, 49);"> Kindly Register </a>
+                <link rel ="Register" href="register.html"></p>
+            </form>
+        </div>
+    </div>
+        <form></form>
+    </body>
+</html>
 
